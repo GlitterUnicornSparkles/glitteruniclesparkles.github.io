@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velira | Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none">Velira</a></div>
+    <div class="nav-actions">
+      <div class="lang-selector">
+        <button class="lang-btn" id="lang-btn" aria-label="Select language">
+          <span id="lang-current">EN</span><span class="lang-arrow"> ▾</span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-option active" data-lang="en">English</button>
+          <button class="lang-option" data-lang="es">Español</button>
+          <button class="lang-option" data-lang="de">Deutsch</button>
+          <button class="lang-option" data-lang="hi">हिन्दी</button>
+          <button class="lang-option" data-lang="ar">العربية</button>
+          <button class="lang-option" data-lang="fr">Français</button>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#pillars" data-i18n="nav-topics">Topics</a></li>
+      <li><a href="index.html#resources" data-i18n="nav-resources">Resources</a></li>
+      <li><a href="index.html#contact" data-i18n="nav-contact">Contact</a></li>
+      <li><a href="index.html#newsletter" class="nav-cta" data-i18n="nav-join">Join</a></li>
+    </ul>
+  </nav>
+
+  <section class="notes notes-page">
+    <div class="notes-inner">
+      <div class="section-label" data-i18n="notes-label">Notes</div>
+      <h2 class="notes-title" data-i18n="notes-title">How to use Velira</h2>
+      <p class="notes-intro" data-i18n="notes-intro">Velira is built to help you better understand your hormonal rhythms through thoughtful, evidence-informed insights.</p>
+
+      <div class="notes-block">
+        <div class="notes-block-title" data-i18n="notes-b1-title">How this is meant to support you</div>
+        <p data-i18n="notes-b1-p">The content you find here is designed to support your understanding. It is not medical advice, diagnosis, or treatment, and should not be relied upon as a substitute for professional care. If you have questions about your health, it's important to consult a qualified healthcare provider.</p>
+      </div>
+
+      <div class="notes-block">
+        <div class="notes-block-title" data-i18n="notes-b2-title">Joining the Velira community</div>
+        <p data-i18n="notes-b2-p">If you choose to stay in touch with us and sign up, we will use your email to share insights, updates, and resources related to hormone intelligence. We may also use basic, non-identifiable data to improve what we create. We do not sell your personal data, and you can unsubscribe at any time.</p>
+      </div>
+
+      <div class="notes-block">
+        <div class="notes-block-title" data-i18n="notes-b3-title">What to keep in mind</div>
+        <p data-i18n="notes-b3-p">Everything we share is intended to add clarity — not override your judgment. While we aim to provide accurate and meaningful insights, we cannot guarantee outcomes based on the use of this information.</p>
+      </div>
+
+      <div class="notes-block" id="contact">
+        <div class="notes-block-title" data-i18n="notes-b4-title">Get in touch</div>
+        <p data-i18n-html="notes-b4-p">Velira is operated as an independent brand. For questions or inquiries, kindly reach out to: <a href="mailto:hello@velira.co" class="notes-link">hello@velira.co</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo"><a href="index.html" style="color:inherit;text-decoration:none">Velira</a></div>
+    <p class="foot-tag" data-i18n="foot-tag">Hormone intelligence for the modern woman.</p>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/Velira_Me" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@Velira_Me" target="_blank">TikTok</a>
+      <a href="notes.html" data-i18n="nav-notes">Notes</a>
+      <a href="mailto:hello@velira.co" data-i18n="nav-contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

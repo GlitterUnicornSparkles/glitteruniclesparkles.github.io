@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,25 +12,39 @@
 
   <nav>
     <div class="logo">Velira</div>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <div class="nav-actions">
+      <div class="lang-selector">
+        <button class="lang-btn" id="lang-btn" aria-label="Select language">
+          <span id="lang-current">EN</span><span class="lang-arrow"> ▾</span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-option active" data-lang="en">English</button>
+          <button class="lang-option" data-lang="es">Español</button>
+          <button class="lang-option" data-lang="de">Deutsch</button>
+          <button class="lang-option" data-lang="hi">हिन्दी</button>
+          <button class="lang-option" data-lang="ar">العربية</button>
+          <button class="lang-option" data-lang="fr">Français</button>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
     <ul class="nav-links">
-      <li><a href="#pillars">Topics</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#notes">Notes</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#newsletter" class="nav-cta">Join</a></li>
+      <li><a href="#pillars" data-i18n="nav-topics">Topics</a></li>
+      <li><a href="#resources" data-i18n="nav-resources">Resources</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+      <li><a href="#newsletter" class="nav-cta" data-i18n="nav-join">Join</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <div class="eyebrow">Hormone Intelligence for the modern woman</div>
-    <h1>Your body isn't <em>broken.</em> It's speaking to you.</h1>
-    <p class="hero-sub">Your toolkit to harmonise your mind, body and heart with your hormonal cycle.</p>
-    <a href="#newsletter" class="btn-primary">Get Personalised Insight</a>
+    <div class="eyebrow" data-i18n="hero-eyebrow">Hormone Intelligence for the modern woman</div>
+    <h1 data-i18n-html="hero-h1">Your body isn't <em>broken.</em> It's speaking to you.</h1>
+    <p class="hero-sub" data-i18n="hero-sub">Your toolkit to harmonise your mind, body and heart with your hormonal cycle.</p>
+    <a href="#newsletter" class="btn-primary" data-i18n="hero-btn">Get Personalised Insight</a>
     <div class="stats">
-      <div class="stat"><span>47k</span><small>women reading</small></div>
-      <div class="stat"><span>200+</span><small>articles</small></div>
-      <div class="stat"><span>4.9★</span><small>reader rating</small></div>
+      <div class="stat"><span>47k</span><small data-i18n="stat-1">women reading</small></div>
+      <div class="stat"><span>200+</span><small data-i18n="stat-2">articles</small></div>
+      <div class="stat"><span>4.9★</span><small data-i18n="stat-3">reader rating</small></div>
     </div>
   </section>
 
@@ -41,123 +55,98 @@
   </div>
 
   <section class="pillars" id="pillars">
-    <div class="section-label">What we cover</div>
-    <div class="section-title">The three pillars of hormone intelligence</div>
+    <div class="section-label" data-i18n="pillars-label">What we cover</div>
+    <div class="section-title" data-i18n="pillars-title">The three pillars of hormone intelligence</div>
     <div class="pillars-grid">
       <div class="pillar featured">
         <div class="pillar-icon"></div>
-        <h3>Mind</h3>
-        <p>Focus, clarity and calmness — optimised around your cycle.</p>
+        <h3 data-i18n="pillar-mind-h3">Mind</h3>
+        <p data-i18n="pillar-mind-p">Focus, clarity and calmness — optimised around your cycle.</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon"></div>
-        <h3>Body</h3>
-        <p>Nutrition, movement and metabolism — built for your cycle, not a male body.</p>
+        <h3 data-i18n="pillar-body-h3">Body</h3>
+        <p data-i18n="pillar-body-p">Nutrition, movement and metabolism — built for your cycle, not a male body.</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon"></div>
-        <h3>Heart</h3>
-        <p>Emotions, relationships and connection — harmonised throughout your cycle.</p>
+        <h3 data-i18n="pillar-heart-h3">Heart</h3>
+        <p data-i18n="pillar-heart-p">Emotions, relationships and connection — harmonised throughout your cycle.</p>
       </div>
     </div>
   </section>
 
   <section class="resources" id="resources">
-    <div class="section-label">Free resources</div>
-    <div class="section-title">Start here</div>
+    <div class="section-label" data-i18n="resources-label">Free resources</div>
+    <div class="section-title" data-i18n="resources-title">Start here</div>
     <div class="res-list">
       <div class="res-item">
-        <div class="res-type">Guide</div>
+        <div class="res-type" data-i18n="res-1-type">Guide</div>
         <div class="res-content">
-          <div class="res-title">The Cortisol Reset Protocol</div>
-          <div class="res-desc">3 weeks to rebuild your morning energy and flatten your stress curve.</div>
+          <div class="res-title" data-i18n="res-1-title">The Cortisol Reset Protocol</div>
+          <div class="res-desc" data-i18n="res-1-desc">3 weeks to rebuild your morning energy and flatten your stress curve.</div>
         </div>
-        <a href="#" class="res-link">Download →</a>
+        <a href="#" class="res-link" data-i18n="res-link">Download →</a>
       </div>
       <div class="res-item">
-        <div class="res-type">Chart</div>
+        <div class="res-type" data-i18n="res-2-type">Chart</div>
         <div class="res-content">
-          <div class="res-title">Cycle Syncing: Food &amp; Movement Map</div>
-          <div class="res-desc">One page. Four phases. Exactly what to eat and how to train.</div>
+          <div class="res-title" data-i18n="res-2-title">Cycle Syncing: Food &amp; Movement Map</div>
+          <div class="res-desc" data-i18n="res-2-desc">One page. Four phases. Exactly what to eat and how to train.</div>
         </div>
-        <a href="#" class="res-link">Download →</a>
+        <a href="#" class="res-link" data-i18n="res-link">Download →</a>
       </div>
       <div class="res-item">
-        <div class="res-type">Assessment</div>
+        <div class="res-type" data-i18n="res-3-type">Assessment</div>
         <div class="res-content">
-          <div class="res-title">Is Your Metabolism Broken? 12-Point Check</div>
-          <div class="res-desc">Score yourself across thyroid, cortisol and progesterone markers.</div>
+          <div class="res-title" data-i18n="res-3-title">Is Your Metabolism Broken? 12-Point Check</div>
+          <div class="res-desc" data-i18n="res-3-desc">Score yourself across thyroid, cortisol and progesterone markers.</div>
         </div>
-        <a href="#" class="res-link">Download →</a>
+        <a href="#" class="res-link" data-i18n="res-link">Download →</a>
       </div>
     </div>
   </section>
 
   <section class="newsletter" id="newsletter">
-    <div class="nl-label">Weekly insights</div>
-    <div class="nl-title">One hormone insight.<br>Every Thursday.</div>
-    <div class="nl-sub">Join 47,000 women. No fluff. No supplements to sell.</div>
+    <div class="nl-label" data-i18n="nl-label">Weekly insights</div>
+    <div class="nl-title" data-i18n-html="nl-title">One hormone insight.<br>Every Thursday.</div>
+    <div class="nl-sub" data-i18n="nl-sub">Join 47,000 women. No fluff. No supplements to sell.</div>
 
     <div class="nl-toggle">
-      <button class="nl-tab nl-tab--active" data-form="email">Email</button>
-      <button class="nl-tab" data-form="whatsapp">WhatsApp</button>
+      <button class="nl-tab nl-tab--active" data-form="email" data-i18n="nl-tab-email">Email</button>
+      <button class="nl-tab" data-form="whatsapp" data-i18n="nl-tab-wa">WhatsApp</button>
     </div>
 
     <form class="nl-form nl-form--email" id="form-email" onsubmit="handleSubmit(event)">
-      <input type="email" placeholder="Your email address" required>
-      <button type="submit">Subscribe</button>
+      <input type="email" data-i18n-placeholder="nl-email-ph" placeholder="Your email address" required>
+      <button type="submit" data-i18n="nl-email-btn">Subscribe</button>
     </form>
 
     <div class="nl-wa-info" id="form-whatsapp" style="display:none">
-      <p class="nl-wa-note">Receive your weekly Velira insight directly on WhatsApp</p>
+      <p class="nl-wa-note" data-i18n="nl-wa-note">Receive your weekly Velira insight directly on WhatsApp</p>
       <form class="nl-form nl-form--wa" onsubmit="handleWhatsApp(event)">
-        <input type="tel" placeholder="Your number incl. country code" required>
-        <button type="submit">Join on WhatsApp</button>
+        <input type="tel" data-i18n-placeholder="nl-wa-ph" placeholder="Your number incl. country code" required>
+        <button type="submit" data-i18n="nl-wa-btn">Join on WhatsApp</button>
       </form>
     </div>
 
-    <p class="nl-note">No spam. Unsubscribe anytime.</p>
+    <p class="nl-note" data-i18n="nl-note">No spam. Unsubscribe anytime.</p>
   </section>
 
-  <section class="notes" id="notes">
-    <div class="notes-inner">
-      <div class="section-label">Notes</div>
-      <h2 class="notes-title">How to use Velira</h2>
-      <p class="notes-intro">Velira is built to help you better understand your hormonal rhythms through thoughtful, evidence-informed insights.</p>
-
-      <div class="notes-block">
-        <div class="notes-block-title">How this is meant to support you</div>
-        <p>The content you find here is designed to support your understanding. It is not medical advice, diagnosis, or treatment, and should not be relied upon as a substitute for professional care. If you have questions about your health, it's important to consult a qualified healthcare provider.</p>
-      </div>
-
-      <div class="notes-block">
-        <div class="notes-block-title">Joining the Velira community</div>
-        <p>If you choose to stay in touch with us and sign up, we will use your email to share insights, updates, and resources related to hormone intelligence. We may also use basic, non-identifiable data (such as how the site is used) to improve what we create and how it's delivered. We do not sell your personal data, and you can unsubscribe at any time.</p>
-      </div>
-
-      <div class="notes-block">
-        <div class="notes-block-title">What to keep in mind</div>
-        <p>Everything we share is intended to add clarity — not override your judgment. While we aim to provide accurate and meaningful insights, we cannot guarantee outcomes based on the use of this information.</p>
-      </div>
-
-      <div class="notes-block" id="contact">
-        <div class="notes-block-title">Get in touch</div>
-        <p>Velira is operated as an independent brand. For questions or inquiries, kindly reach out to: <a href="mailto:hello@velira.co" class="notes-link">hello@velira.co</a></p>
-      </div>
-    </div>
-  </section>
+  <div id="contact" style="scroll-margin-top:80px"></div>
 
   <footer>
     <div class="foot-logo">Velira</div>
-    <p class="foot-tag">Hormone intelligence for the modern woman.</p>
+    <p class="foot-tag" data-i18n="foot-tag">Hormone intelligence for the modern woman.</p>
     <div class="foot-links">
       <a href="https://www.instagram.com/Velira_Me" target="_blank">Instagram</a>
       <a href="https://www.tiktok.com/@Velira_Me" target="_blank">TikTok</a>
-      <a href="#notes">Notes</a>
-      <a href="#contact">Contact</a>
+      <a href="notes.html" data-i18n="nav-notes">Notes</a>
+      <a href="mailto:hello@velira.co" data-i18n="nav-contact">Contact</a>
     </div>
   </footer>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
