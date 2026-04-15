@@ -140,6 +140,11 @@ h1 em {
   color: var(--pink);
 }
 
+.h1-plain {
+  font-style: normal;
+  color: var(--cream);
+}
+
 .hero-sub {
   font-size: 0.95rem;
   color: var(--mint);
