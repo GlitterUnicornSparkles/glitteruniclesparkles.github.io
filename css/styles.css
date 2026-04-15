@@ -241,6 +241,11 @@ h1 em {
   margin: 0 auto 2.5rem;
 }
 
+.quote-section--vision {
+  background: var(--forest-deep);
+  border-top: none;
+}
+
 .quote-sub {
   font-size: 0.8rem;
   letter-spacing: 0.18em;
@@ -278,7 +283,7 @@ h1 em {
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--forest-mid);
   border: 0.5px solid var(--forest-mid);
