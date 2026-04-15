@@ -14,9 +14,10 @@
     <div class="logo">Velira</div>
     <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     <ul class="nav-links">
-      <li><a href="#vision">About</a></li>
       <li><a href="#pillars">Topics</a></li>
       <li><a href="#resources">Resources</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="#newsletter" class="nav-cta">Join</a></li>
     </ul>
   </nav>
@@ -93,26 +94,68 @@
   </section>
 
   <section class="newsletter" id="newsletter">
-    <div class="nl-label">Weekly newsletter</div>
+    <div class="nl-label">Weekly insights</div>
     <div class="nl-title">One hormone insight.<br>Every Thursday.</div>
     <div class="nl-sub">Join 47,000 women. No fluff. No supplements to sell.</div>
-    <form class="nl-form" onsubmit="handleSubmit(event)">
+
+    <div class="nl-toggle">
+      <button class="nl-tab nl-tab--active" data-form="email">Email</button>
+      <button class="nl-tab" data-form="whatsapp">WhatsApp</button>
+    </div>
+
+    <form class="nl-form nl-form--email" id="form-email" onsubmit="handleSubmit(event)">
       <input type="email" placeholder="Your email address" required>
       <button type="submit">Subscribe</button>
     </form>
+
+    <div class="nl-wa-info" id="form-whatsapp" style="display:none">
+      <p class="nl-wa-note">Receive your weekly Velira insight directly on WhatsApp</p>
+      <form class="nl-form nl-form--wa" onsubmit="handleWhatsApp(event)">
+        <input type="tel" placeholder="Your number incl. country code" required>
+        <button type="submit">Join on WhatsApp</button>
+      </form>
+    </div>
+
     <p class="nl-note">No spam. Unsubscribe anytime.</p>
+  </section>
+
+  <section class="notes" id="notes">
+    <div class="notes-inner">
+      <div class="section-label">Notes</div>
+      <h2 class="notes-title">How to use Velira</h2>
+      <p class="notes-intro">Velira is built to help you better understand your hormonal rhythms through thoughtful, evidence-informed insights.</p>
+
+      <div class="notes-block">
+        <div class="notes-block-title">How this is meant to support you</div>
+        <p>The content you find here is designed to support your understanding. It is not medical advice, diagnosis, or treatment, and should not be relied upon as a substitute for professional care. If you have questions about your health, it's important to consult a qualified healthcare provider.</p>
+      </div>
+
+      <div class="notes-block">
+        <div class="notes-block-title">Joining the Velira community</div>
+        <p>If you choose to stay in touch with us and sign up, we will use your email to share insights, updates, and resources related to hormone intelligence. We may also use basic, non-identifiable data (such as how the site is used) to improve what we create and how it's delivered. We do not sell your personal data, and you can unsubscribe at any time.</p>
+      </div>
+
+      <div class="notes-block">
+        <div class="notes-block-title">What to keep in mind</div>
+        <p>Everything we share is intended to add clarity — not override your judgment. While we aim to provide accurate and meaningful insights, we cannot guarantee outcomes based on the use of this information.</p>
+      </div>
+
+      <div class="notes-block" id="contact">
+        <div class="notes-block-title">Get in touch</div>
+        <p>Velira is operated as an independent brand. For questions or inquiries, kindly reach out to: <a href="mailto:hello@velira.co" class="notes-link">hello@velira.co</a></p>
+      </div>
+    </div>
   </section>
 
   <footer>
     <div class="foot-logo">Velira</div>
     <p class="foot-tag">Hormone intelligence for the modern woman.</p>
     <div class="foot-links">
-      <a href="#">TikTok</a>
       <a href="https://www.instagram.com/Velira_Me" target="_blank">Instagram</a>
-      <a href="#">Privacy</a>
-      <a href="#">Disclaimer</a>
+      <a href="https://www.tiktok.com/@Velira_Me" target="_blank">TikTok</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
     </div>
-    <p class="foot-disc">Velira is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider.</p>
   </footer>
 
   <script src="js/main.js"></script>

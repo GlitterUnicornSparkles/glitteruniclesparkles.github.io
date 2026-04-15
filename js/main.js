@@ -11,6 +11,19 @@ navLinks.querySelectorAll('a').forEach(function(link) {
   });
 });
 
+// Newsletter toggle: Email / WhatsApp
+document.querySelectorAll('.nl-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.nl-tab').forEach(function(t) {
+      t.classList.remove('nl-tab--active');
+    });
+    this.classList.add('nl-tab--active');
+    const target = this.dataset.form;
+    document.getElementById('form-email').style.display = target === 'email' ? '' : 'none';
+    document.getElementById('form-whatsapp').style.display = target === 'whatsapp' ? '' : 'none';
+  });
+});
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
@@ -24,6 +37,20 @@ function handleSubmit(e) {
   }, 3000);
 }
 
+function handleWhatsApp(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const input = e.target.querySelector('input');
+  btn.textContent = 'Joined ✓';
+  btn.style.background = '#2a5240';
+  input.value = '';
+  setTimeout(() => {
+    btn.textContent = 'Join on WhatsApp';
+    btn.style.background = '';
+  }, 3000);
+}
+
+// Scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -33,7 +60,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.vm, .quote-section, .pillars, .resources, .newsletter').forEach(el => {
+document.querySelectorAll('.pillars, .resources, .newsletter, .notes').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(18px)';
   el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
