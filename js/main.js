@@ -1,5 +1,14 @@
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  document.querySelector('.nav-links').classList.toggle('open');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', function() {
+  navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+  });
 });
 
 function handleSubmit(e) {
