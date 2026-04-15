@@ -40,9 +40,9 @@ nav {
 
 .logo {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   font-weight: 300;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   color: var(--mint);
 }
 
@@ -215,26 +215,42 @@ h1 em {
 
 .quote-section {
   background: var(--forest);
-  padding: 5rem 4rem;
+  padding: 7rem 4rem;
   text-align: center;
   border-bottom: 0.5px solid var(--forest-mid);
+  position: relative;
+}
+
+.quote-section::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--pink);
+  margin: 0 auto 3rem;
 }
 
 .quote {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
   font-weight: 300;
   font-style: italic;
   color: var(--cream);
-  line-height: 1.3;
-  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
 }
 
 .quote-sub {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--mint-deep);
+  color: var(--mint);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 300;
+  opacity: 0.75;
 }
 
 .section-label {
