@@ -1,3 +1,7 @@
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
