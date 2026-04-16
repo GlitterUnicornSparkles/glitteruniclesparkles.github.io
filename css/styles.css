@@ -8,9 +8,12 @@
   --mint: #a8d5c2;
   --mint-light: #d4ede6;
   --mint-deep: #5aaa8a;
+  --mint-dark: #7ab5a0;
   --cream: #f8f4f0;
+  --grey: #e5e3e1;
   --muted: #6a9a88;
   --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
 }
 
@@ -199,18 +202,19 @@ nav {
 }
 
 .eyebrow {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mint);
   margin-bottom: 1.25rem;
-  font-weight: 500;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-size: clamp(3.2rem, 11vw, 5.5rem);
   font-weight: 300;
   line-height: 1.08;
   color: var(--cream);
@@ -237,19 +241,25 @@ h1 em {
 }
 
 .btn-primary {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background: var(--pink);
   color: var(--forest-deep);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--forest-deep);
+  text-underline-offset: 3px;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 18px 32px;
+  padding: 15px 32px;
   border: none;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 50px;
+  min-height: 50px;
   transition: background 0.2s;
   text-align: center;
 }
@@ -283,10 +293,12 @@ h1 em {
 }
 
 .stat small {
+  display: block;
   font-size: 0.6rem;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  word-break: break-word;
 }
 
 /* ─────────────────────────────
@@ -479,78 +491,145 @@ h1 em {
 .res-btn {
   background: var(--pink);
   color: var(--forest-deep) !important;
-  padding: 10px 20px;
-  border-radius: 2px;
-  font-size: 0.72rem;
+  padding: 13px 22px;
+  border-radius: 50px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: var(--forest-deep);
+  text-underline-offset: 3px;
   transition: background 0.2s;
   white-space: nowrap;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .res-btn:hover { background: var(--pink-deep); color: var(--cream) !important; }
 
 /* ─────────────────────────────
-   NEWSLETTER
+   NEWSLETTER — two-zone, mobile first
 ───────────────────────────── */
-.newsletter {
-  background: var(--pink);
-  padding: 3rem 1.25rem;
-  text-align: center;
-}
+.newsletter { display: flex; flex-direction: column; }
 
-.nl-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--forest-deep);
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-  opacity: 0.6;
-}
-
-.nl-title {
+/* Shared zone label */
+.nl-zone-label {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 7vw, 2.5rem);
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.85rem;
   color: var(--forest-deep);
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
 }
 
-.nl-sub {
+/* ZONE 1: App (pink bg) */
+.nl-app-zone {
+  background: var(--pink);
+  border-top: 0.5px solid rgba(15,35,24,0.12);
+  border-bottom: 0.5px solid rgba(15,35,24,0.12);
+  padding: 2rem 1.25rem;
+}
+
+.nl-app-sub {
   font-size: 0.88rem;
   color: var(--forest-deep);
-  opacity: 0.6;
-  margin-bottom: 1.75rem;
+  opacity: 0.7;
   font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
 }
 
-.nl-form {
+.nl-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--forest-deep);
+  color: var(--mint);
+  padding: 15px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 3px;
+  text-align: center;
+  min-height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nl-app-btn:hover { background: var(--forest); }
+a.nl-app-btn { text-decoration: underline; text-decoration-color: var(--mint); }
+
+/* ZONE 2: Newsletter (grey bg) */
+.nl-news-zone {
+  background: var(--grey);
+  border-bottom: 0.5px solid rgba(15,35,24,0.1);
+}
+
+.nl-news-header {
+  padding: 1rem 1.25rem 0.5rem;
+  border-bottom: 0.5px solid rgba(15,35,24,0.08);
+}
+
+.nl-news-cols {
   display: flex;
   flex-direction: column;
-  max-width: 420px;
-  margin: 0 auto 0.75rem;
 }
 
-.nl-form input {
-  padding: 16px;
-  background: rgba(15, 35, 24, 0.08);
-  border: 0.5px solid rgba(15, 35, 24, 0.25);
-  border-bottom: none;
+.nl-news-col {
+  padding: 0.75rem 1.25rem;
+}
+
+.nl-news-col + .nl-news-col {
+  border-top: 0.5px solid rgba(15,35,24,0.08);
+  padding-top: 0.6rem;
+}
+
+/* Form blocks */
+.nl-form-block { margin-bottom: 1rem; }
+
+.nl-form-label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--forest-deep);
+  opacity: 0.4;
+  margin-bottom: 0.4rem;
+}
+
+.nl-zone-input {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  background: rgba(15,35,24,0.06);
+  border: 0.5px solid rgba(15,35,24,0.2);
   color: var(--forest-deep);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.88rem;
   outline: none;
-  border-radius: 2px 2px 0 0;
+  border-radius: 50px;
   -webkit-appearance: none;
+  margin-bottom: 0.5rem;
 }
 
-.nl-form input::placeholder { color: rgba(15, 35, 24, 0.4); }
+.nl-zone-input::placeholder { color: rgba(15,35,24,0.35); }
 
-.nl-form button {
-  padding: 16px;
+.nl-zone-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
   background: var(--forest-deep);
   color: var(--mint);
   border: none;
@@ -560,73 +639,50 @@ h1 em {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 0 0 2px 2px;
+  border-radius: 50px;
+  min-height: 50px;
+  text-decoration: underline;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 3px;
   transition: background 0.2s;
 }
 
-.nl-form button:hover { background: var(--forest); }
+.nl-zone-submit:hover { background: var(--forest); }
 
-/* Two-channel signup cards */
-.nl-channels {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  max-width: 680px;
-  margin: 0 auto 1rem;
-  text-align: left;
-}
-
-.nl-channel {
-  background: rgba(15,35,24,0.08);
-  border: 0.5px solid rgba(15,35,24,0.22);
-  border-radius: 2px;
-  padding: 1.6rem;
-}
-
-.nl-channel-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--forest-deep);
-  margin-bottom: 1rem;
-  line-height: 1;
-}
-
-/* WhatsApp country code row */
-.nl-wa-row {
-  display: flex;
-  gap: 0;
-  margin-bottom: 0;
-}
+/* WhatsApp row */
+.nl-wa-row { display: flex; margin-bottom: 0.5rem; }
 
 .nl-country-select {
-  width: 110px;
+  width: 95px;
   flex-shrink: 0;
-  padding: 13px 8px;
+  padding: 11px 8px;
   background: rgba(15,35,24,0.06);
-  border: 0.5px solid rgba(15,35,24,0.25);
+  border: 0.5px solid rgba(15,35,24,0.2);
   border-right: none;
-  border-bottom: none;
-  color: var(--forest-deep);
+  border-radius: 50px 0 0 50px;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  color: var(--forest-deep);
   outline: none;
-  border-radius: 2px 0 0 0;
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
 }
 
-.nl-wa-row input {
+.nl-wa-row .nl-zone-input {
+  border-radius: 0 50px 50px 0;
   flex: 1;
-  border-radius: 0 2px 0 0 !important;
+  width: auto;
+  margin-bottom: 0;
+  border-left: none;
 }
 
 .nl-note {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--forest-deep);
-  opacity: 0.55;
-  margin-top: 1rem;
+  opacity: 0.45;
+  padding: 0.35rem 1.25rem 1.5rem;
+  text-align: center;
 }
 
 /* ─────────────────────────────
@@ -643,12 +699,14 @@ h1 em {
 }
 
 .notes-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 300;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--pink);
   margin-bottom: 2rem;
-  line-height: 1.05;
+  line-height: 1.2;
 }
 
 .notes-intro {
@@ -663,19 +721,23 @@ h1 em {
   padding: 1.75rem 0;
 }
 
+.notes-block + .notes-block {
+  border-top: 0.5px solid var(--forest-mid);
+}
+
 .notes-block-title {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-style: italic;
   color: var(--cream);
   margin-bottom: 0.75rem;
-  font-style: italic;
   line-height: 1.2;
 }
 
 .notes-block p {
-  font-size: 0.9rem;
-  color: var(--mint);
+  font-size: 0.88rem;
+  color: var(--mint-dark);
   line-height: 1.75;
   font-weight: 300;
 }
@@ -861,29 +923,34 @@ footer {
   .nav-links { order: 2; }
   .nav-actions { order: 3; margin-left: 1.5rem; }
 
-  /* Newsletter */
-  .newsletter { padding: 5rem 4rem; }
-  .nl-channels { grid-template-columns: 1fr 1fr; }
-  /* Keep channel forms vertical (not inline) even on tablet */
-  .nl-channel .nl-form { flex-direction: column; }
-  .nl-channel .nl-form input {
-    border-bottom: none;
-    border-right: 0.5px solid rgba(15,35,24,0.25) !important;
-    border-radius: 2px 2px 0 0 !important;
+  /* Newsletter — desktop two-zone */
+  .nl-app-zone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2.5rem 3rem;
+    gap: 2rem;
+    align-items: center;
   }
-  .nl-channel .nl-form button { border-radius: 0 0 2px 2px; }
-  .nl-country-select { border-radius: 2px 0 0 0; }
+  .nl-app-zone .nl-app-sub { margin-bottom: 0; }
+  .nl-app-btn { width: 100%; }
 
-  .nl-form { flex-direction: row; }
+  .nl-news-header { padding: 1.75rem 3rem 1.5rem; }
 
-  .nl-form input {
-    border-bottom: 0.5px solid rgba(15, 35, 24, 0.25);
-    border-right: none;
-    border-radius: 2px 0 0 2px;
-    font-size: 0.9rem;
+  .nl-news-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .nl-form button { border-radius: 0 2px 2px 0; }
+  .nl-news-col {
+    padding: 2rem 3rem;
+  }
+
+  .nl-news-col + .nl-news-col {
+    border-top: none;
+    border-left: 0.5px solid rgba(15,35,24,0.1);
+  }
+
+  .nl-note { padding: 1.25rem 3rem 2rem; }
 
   /* Notes */
   .notes { padding: 5rem 4rem; }

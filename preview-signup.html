@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Newsletter</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest-deep:#0f2318; --forest-mid:#2a5240; --forest:#1a3a2a;
+  --pink:#e8a0b4; --pink-deep:#c4607e;
+  --mint:#a8d5c2; --mint-dark:#7ab5a0; --cream:#f8f4f0;
+  --grey:#e5e3e1; --muted:#6a9a88;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-serif:'DM Serif Display',Georgia,serif;
+  --font-body:'DM Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:#111;padding:2rem 1rem;display:flex;flex-direction:column;gap:2.5rem;align-items:center;}
+.section-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#555;margin-bottom:0.6rem;font-weight:500;}
+
+/* ─── Shared zone label ─── */
+.nl-zone-label {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.85rem;
+  color: var(--forest-deep);
+}
+
+/* ─── Shared button style (pill) ─── */
+.nl-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--forest-deep);
+  color: var(--mint);
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 3px;
+  border: none;
+  cursor: pointer;
+  min-height: 50px;
+  transition: background 0.2s;
+}
+.nl-btn:hover { background: var(--forest); }
+a.nl-btn { text-decoration: underline; text-decoration-color: var(--mint); }
+
+/* ─── Inputs ─── */
+.nl-input {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  background: rgba(15,35,24,0.06);
+  border: 0.5px solid rgba(15,35,24,0.2);
+  color: var(--forest-deep);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  outline: none;
+  border-radius: 50px;
+  -webkit-appearance: none;
+  margin-bottom: 0.5rem;
+}
+.nl-input::placeholder { color: rgba(15,35,24,0.35); }
+
+.nl-form-label {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--forest-deep);
+  opacity: 0.4;
+  margin-bottom: 0.4rem;
+}
+
+/* WhatsApp row */
+.nl-wa-row { display: flex; margin-bottom: 0.5rem; }
+.nl-wa-row select {
+  width: 90px;
+  flex-shrink: 0;
+  padding: 11px 6px;
+  background: rgba(15,35,24,0.06);
+  border: 0.5px solid rgba(15,35,24,0.2);
+  border-right: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 0.78rem;
+  color: var(--forest-deep);
+  outline: none;
+  -webkit-appearance: none;
+}
+.nl-wa-row .nl-input {
+  border-radius: 0 50px 50px 0;
+  flex: 1; width: auto;
+  margin-bottom: 0;
+  border-left: none;
+}
+
+.nl-news-tagline {
+  font-size: 0.88rem;
+  color: var(--forest-deep);
+  opacity: 0.6;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.nl-note {
+  font-size: 0.82rem;
+  color: var(--forest-deep);
+  opacity: 0.4;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.nl-app-sub {
+  font-size: 0.88rem;
+  color: var(--forest-deep);
+  opacity: 0.7;
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.nl-form-block { margin-bottom: 1rem; }
+
+/* ═══════════════════
+   MOBILE — 375px
+═══════════════════ */
+.preview-mobile { width: 375px; }
+.nl-wrap { display: flex; flex-direction: column; }
+
+.nl-app-zone {
+  background: var(--pink);
+  border: 0.5px solid rgba(15,35,24,0.12);
+  padding: 2rem 1.25rem;
+}
+.nl-news-zone {
+  background: var(--grey);
+  border: 0.5px solid rgba(15,35,24,0.1);
+  border-top: none;
+  padding: 2rem 1.25rem;
+}
+
+/* ═══════════════════
+   DESKTOP — 860px
+   App full-width top
+   Email + WA side by side below
+═══════════════════ */
+.preview-desktop { width: 860px; }
+
+.nl-wrap-d { display: flex; flex-direction: column; }
+
+/* Desktop: full-width pink App bar on top, grey 2-col below */
+.nl-app-zone-d {
+  background: var(--pink);
+  border: 0.5px solid rgba(15,35,24,0.12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2.5rem 2.5rem 2rem;
+  gap: 2rem;
+  align-items: end;
+}
+.nl-app-zone-d .nl-app-sub { margin-bottom: 1.25rem; }
+.nl-app-zone-d .nl-btn { width: 100%; }
+
+.nl-grey-header {
+  background: var(--grey);
+  border: 0.5px solid rgba(15,35,24,0.1);
+  border-top: none;
+  border-bottom: 0.5px solid rgba(15,35,24,0.08);
+  padding: 1.75rem 2.5rem 1.5rem;
+}
+
+.nl-channels-d {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0.5px solid rgba(15,35,24,0.1);
+  border-top: none;
+}
+
+.nl-channel-d {
+  background: var(--grey);
+  padding: 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.nl-channel-d:first-child {
+  border-right: 0.5px solid rgba(15,35,24,0.1);
+}
+.nl-channel-d .nl-btn { margin-top: 0.5rem; }
+
+/* ═══════════════════
+   FONT PROPOSAL
+═══════════════════ */
+.font-preview { width: 375px; background: var(--forest-deep); padding: 2rem 1.25rem; }
+.fp-h1 { font-family: var(--font-body); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); line-height: 1.2; margin-bottom: 1.75rem; }
+.fp-h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 300; font-style: italic; color: var(--cream); margin-bottom: 0.6rem; line-height: 1.2; }
+.fp-p { font-size: 0.88rem; color: var(--mint-dark); font-weight: 300; line-height: 1.75; margin-bottom: 1.5rem; }
+.fp-divider { border: none; border-top: 0.5px solid var(--forest-mid); margin-bottom: 1.5rem; }
+.fp-h2b { font-family: var(--font-display); font-size: 1.3rem; font-weight: 300; font-style: normal; color: var(--cream); margin-bottom: 0.6rem; line-height: 1.2; }
+</style>
+</head>
+<body>
+
+<!-- MOBILE -->
+<div class="preview-mobile">
+  <div class="section-label">Newsletter — Mobile (375px)</div>
+  <div class="nl-wrap">
+    <div class="nl-app-zone">
+      <div class="nl-zone-label">Get Personalised Hormone Intelligence in your life</div>
+      <p class="nl-app-sub">Daily insights tailored to your cycle, your goals, and your rhythm.</p>
+      <a href="#" class="nl-btn">Get the App</a>
+    </div>
+    <div class="nl-news-zone">
+      <div class="nl-zone-label">Or stay in touch weekly</div>
+      <p class="nl-news-tagline">One hormone insight. Every Thursday.<br><span style="opacity:0.55">No spam. Unsubscribe anytime.</span></p>
+      <div class="nl-form-block">
+        <span class="nl-form-label">Email</span>
+        <input class="nl-input" type="email" placeholder="Your email address">
+        <button class="nl-btn">Subscribe</button>
+      </div>
+      <div class="nl-form-block">
+        <span class="nl-form-label">WhatsApp</span>
+        <div class="nl-wa-row">
+          <select><option>🇺🇸 +1</option><option>🇬🇧 +44</option><option>🇩🇪 +49</option></select>
+          <input class="nl-input" type="tel" placeholder="Phone number">
+        </div>
+        <button class="nl-btn">Join on WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div class="preview-desktop">
+  <div class="section-label">Newsletter — Desktop (860px)</div>
+  <div class="nl-wrap-d">
+
+    <!-- Pink bar: text left, CTA right — aligned above email/whatsapp columns -->
+    <div class="nl-app-zone-d">
+      <div>
+        <div class="nl-zone-label">Get Personalised Hormone Intelligence in your life</div>
+        <p class="nl-app-sub">Daily insights tailored to your cycle, your goals, and your rhythm.</p>
+      </div>
+      <a href="#" class="nl-btn">Get the App</a>
+    </div>
+
+    <!-- Grey header bar: full-width label + tagline above both cols -->
+    <div class="nl-grey-header">
+      <div class="nl-zone-label">Or stay in touch weekly</div>
+      <p class="nl-news-tagline">One hormone insight. Every Thursday. &nbsp;·&nbsp; <span style="opacity:0.55">No spam. Unsubscribe anytime.</span></p>
+    </div>
+
+    <!-- Two equal cols: inputs + buttons aligned -->
+    <div class="nl-channels-d">
+      <div class="nl-channel-d">
+        <span class="nl-form-label">Email</span>
+        <input class="nl-input" type="email" placeholder="Your email address">
+        <button class="nl-btn">Subscribe</button>
+      </div>
+      <div class="nl-channel-d">
+        <span class="nl-form-label">WhatsApp</span>
+        <div class="nl-wa-row">
+          <select><option>🇺🇸 +1</option><option>🇬🇧 +44</option><option>🇩🇪 +49</option></select>
+          <input class="nl-input" type="tel" placeholder="Phone number">
+        </div>
+        <button class="nl-btn">Join on WhatsApp</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FONT PROPOSAL: italic sub-headings (approved) -->
+<div>
+  <div class="section-label">Notes/About — approved style</div>
+  <div class="font-preview">
+    <div class="fp-h1">Notes</div>
+    <div class="fp-h2">How to use Velira</div>
+    <div class="fp-p">The content here supports your understanding. It is not medical advice, diagnosis, or treatment.</div>
+    <hr class="fp-divider">
+    <div class="fp-h2">Joining the Velira community</div>
+    <div class="fp-p">If you choose to stay in touch, we will use your email to share insights on hormone intelligence.</div>
+  </div>
+</div>
+
+
+</body>
+</html>

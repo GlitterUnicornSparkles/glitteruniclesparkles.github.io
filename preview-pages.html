@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Typography Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest-deep:#0f2318; --forest-mid:#2a5240; --forest:#1a3a2a;
+  --pink:#e8a0b4; --mint:#a8d5c2; --cream:#f8f4f0; --muted:#6a9a88;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:#111;padding:2rem;display:flex;flex-direction:column;gap:3rem;align-items:center}
+.label{font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#555;margin-bottom:1rem;font-weight:500}
+.page{width:100%;max-width:780px;background:var(--forest-deep);padding:3.5rem 3rem;border-top:0.5px solid var(--forest-mid)}
+
+/* ── BIG PINK PAGE TITLE (new) ── */
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 300;
+  color: var(--pink);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+/* ── INTRO PARAGRAPH (mint, existing notes-intro style) ── */
+.intro-text {
+  font-size: 0.95rem;
+  color: var(--mint);
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid var(--forest-mid);
+}
+
+/* ── BLOCK (existing notes-block style) ── */
+.block {
+  padding: 1.75rem 0;
+  border-bottom: 0.5px solid var(--forest-mid);
+}
+.block:last-child { border-bottom: none; }
+
+/* ── BLOCK TITLE (bumped from 1.1rem, italic serif — existing style) ── */
+.block-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* ── BODY TEXT — mint throughout ── */
+.body-text {
+  font-size: 0.9rem;
+  color: var(--mint);
+  line-height: 1.75;
+  font-weight: 300;
+}
+.body-text + .body-text { margin-top: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div style="width:100%;max-width:780px"><div class="label">About Us page</div></div>
+<div class="page">
+  <h1 class="page-title">About Velira</h1>
+
+  <p class="intro-text">Velira was created by a small collective of women in their 30s and 40s who spent years trying to understand what was happening in their own bodies — not in theory, but in practice. What stood out was not just the symptoms themselves, but how long it took to make sense of them.</p>
+
+  <div class="block">
+    <div class="block-title">Why we started Velira</div>
+    <p class="body-text">Most of us moved through different doctors, different opinions, and advice that often felt generalized rather than truly individual. Our symptoms were often minimized or explained away as "normal," without offering a holistic path toward improvement.</p>
+    <p class="body-text">Velira was built from that gap: not a lack of information, but a lack of coherence.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">What Velira is here to do</div>
+    <p class="body-text">Velira is here to help you make your hormones work for you — not against you — in every aspect of your life. The intention is not to give you something to follow, but to help you recognise patterns and work with them, rather than against them.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">What this means in practice</div>
+    <p class="body-text">Over time, parts of Velira will become available as structured, paid offerings. A core part of what we build will remain accessible. We believe that understanding your hormonal cycle should not take ten-plus years of trial and error.</p>
+  </div>
+</div>
+
+<div style="width:100%;max-width:780px"><div class="label">Notes page</div></div>
+<div class="page">
+  <h1 class="page-title">Notes</h1>
+
+  <p class="intro-text">Velira is built to help you better understand your hormonal rhythms through thoughtful, evidence-informed insights.</p>
+
+  <div class="block">
+    <div class="block-title">How this is meant to support you</div>
+    <p class="body-text">The content you find here is designed to support your understanding. It is not medical advice, diagnosis, or treatment, and should not be relied upon as a substitute for professional care.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">Joining the Velira community</div>
+    <p class="body-text">If you choose to stay in touch with us and sign up, we will use your email to share insights and resources. We do not sell your personal data, and you can unsubscribe at any time.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">What to keep in mind</div>
+    <p class="body-text">Everything we share is intended to add clarity — not override your judgment. While we aim to provide accurate and meaningful insights, we cannot guarantee outcomes.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">Get in touch</div>
+    <p class="body-text">Velira is operated as an independent brand. For questions or inquiries: <a href="mailto:hello@velira.co" style="color:var(--pink);text-decoration:none">hello@velira.co</a></p>
+  </div>
+</div>
+
+</body>
+</html>

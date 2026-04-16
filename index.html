@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velira | Hormone Intelligence for Women</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -41,15 +41,15 @@
     <p class="hero-sub" data-i18n="hero-sub">Your toolkit to harmonise your mind, body and heart with your hormonal cycle.</p>
     <a href="#newsletter" class="btn-primary" data-i18n="hero-btn">Get Personalised Insight</a>
     <div class="stats">
-      <div class="stat"><span>20k+</span><small data-i18n="stat-1">women engaging</small></div>
-      <div class="stat"><span>100+</span><small data-i18n="stat-2">weekly articles</small></div>
-      <div class="stat"><span>4.9★</span><small data-i18n="stat-3">insights rating</small></div>
+      <div class="stat"><span>20k+</span><small data-i18n-html="stat-1">women<br>engaging</small></div>
+      <div class="stat"><span>100+</span><small data-i18n-html="stat-2">weekly<br>articles</small></div>
+      <div class="stat"><span>4.9★</span><small data-i18n-html="stat-3">insights<br>rating</small></div>
     </div>
   </section>
 
   <div class="marquee-wrap">
     <div class="marquee">
-      <span>Metabolism Reset &nbsp;·&nbsp; Progesterone &amp; Mood &nbsp;·&nbsp; Sleep Architecture &nbsp;·&nbsp; Training &amp; Hormones &nbsp;·&nbsp; Thyroid Health &nbsp;·&nbsp; Balanced Nutrition &nbsp;·&nbsp; Emotional Connection &nbsp;·&nbsp; Metabolism Reset &nbsp;·&nbsp; Progesterone &amp; Mood &nbsp;·&nbsp; Sleep Architecture &nbsp;·&nbsp; Training &amp; Hormones &nbsp;·&nbsp; Thyroid Health &nbsp;·&nbsp; Balanced Nutrition &nbsp;·&nbsp; Emotional Connection &nbsp;·&nbsp;</span>
+      <span data-i18n-html="marquee">Metabolism Reset &nbsp;·&nbsp; Progesterone &amp; Mood &nbsp;·&nbsp; Sleep Architecture &nbsp;·&nbsp; Training &amp; Hormones &nbsp;·&nbsp; Thyroid Health &nbsp;·&nbsp; Balanced Nutrition &nbsp;·&nbsp; Emotional Connection &nbsp;·&nbsp; Metabolism Reset &nbsp;·&nbsp; Progesterone &amp; Mood &nbsp;·&nbsp; Sleep Architecture &nbsp;·&nbsp; Training &amp; Hormones &nbsp;·&nbsp; Thyroid Health &nbsp;·&nbsp; Balanced Nutrition &nbsp;·&nbsp; Emotional Connection &nbsp;·&nbsp;</span>
     </div>
   </div>
 
@@ -76,96 +76,103 @@
   </section>
 
   <section class="resources" id="resources">
-    <div class="section-label">Resources</div>
-    <div class="section-title">Start here</div>
+    <div class="section-label" data-i18n="resources-label">Resources</div>
+    <div class="section-title" data-i18n="resources-title">Start here</div>
     <div class="res-list">
       <div class="res-item">
         <div class="res-content">
-          <div class="res-title">Hormone Intelligence 101</div>
-          <div class="res-desc">What happens to your body and how it can affect your mind, body and heart.</div>
+          <div class="res-title" data-i18n="res-1-title">Hormone Intelligence 101</div>
+          <div class="res-desc" data-i18n="res-1-desc">Understand your hormones. Understand yourself.</div>
         </div>
-        <a href="/hormone-101" class="res-link res-btn">Start</a>
+        <a href="/hormone-101" class="res-link res-btn" data-i18n="res-btn-start">Start</a>
       </div>
       <div class="res-item">
         <div class="res-content">
-          <div class="res-title">Personal Quiz</div>
-          <div class="res-desc">Get a free personalised Hormone Intelligence baseline for you (no sign up required!).</div>
+          <div class="res-title" data-i18n="res-2-title">Personal Quiz</div>
+          <div class="res-desc" data-i18n="res-2-desc">Your free personalised hormone baseline. No sign up needed.</div>
         </div>
-        <a href="/quiz" class="res-link res-btn">Start</a>
-      </div>
-      <div class="res-item">
-        <div class="res-content">
-          <div class="res-title">Personalised Insights</div>
-          <div class="res-desc">Use our free app to get daily personalised Hormone Intelligence insights for your life, or sign up to our newsletter for general weekly insights.</div>
-        </div>
-        <a href="/insights" class="res-link res-btn">Start</a>
+        <a href="/quiz" class="res-link res-btn" data-i18n="res-btn-start">Start</a>
       </div>
     </div>
   </section>
 
   <section class="newsletter" id="newsletter">
-    <div class="nl-label" data-i18n="nl-label">Weekly insights</div>
-    <div class="nl-title" data-i18n-html="nl-title">One hormone insight.<br>Every Thursday.</div>
-    <div class="nl-sub" data-i18n="nl-sub">Join 20,000 women. No fluff. No supplements to sell.</div>
 
-    <div class="nl-channels">
-      <div class="nl-channel">
-        <div class="nl-channel-title">Email</div>
-        <form onsubmit="handleSubmit(event)">
-          <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
-          <div class="nl-form">
-            <input type="email" data-i18n-placeholder="nl-email-ph" placeholder="Your email address" required>
-            <button type="submit" data-i18n="nl-email-btn">Subscribe</button>
-          </div>
-        </form>
+    <!-- Zone 1: App (pink) -->
+    <div class="nl-app-zone">
+      <div>
+        <div class="nl-zone-label" data-i18n="nl-app-label">Get Personalised Hormone Intelligence in your life</div>
+        <p class="nl-app-sub" data-i18n="nl-app-sub">Daily insights tailored to your cycle, your goals, and your rhythm.</p>
       </div>
-      <div class="nl-channel">
-        <div class="nl-channel-title">WhatsApp</div>
-        <form onsubmit="handleWhatsApp(event)">
-          <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
-          <div class="nl-form nl-form--wa">
-            <div class="nl-wa-row">
-              <select class="nl-country-select" aria-label="Country code">
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+49">🇩🇪 +49</option>
-                <option value="+33">🇫🇷 +33</option>
-                <option value="+34">🇪🇸 +34</option>
-                <option value="+39">🇮🇹 +39</option>
-                <option value="+41">🇨🇭 +41</option>
-                <option value="+43">🇦🇹 +43</option>
-                <option value="+31">🇳🇱 +31</option>
-                <option value="+32">🇧🇪 +32</option>
-                <option value="+46">🇸🇪 +46</option>
-                <option value="+47">🇳🇴 +47</option>
-                <option value="+45">🇩🇰 +45</option>
-                <option value="+358">🇫🇮 +358</option>
-                <option value="+48">🇵🇱 +48</option>
-                <option value="+351">🇵🇹 +351</option>
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+971">🇦🇪 +971</option>
-                <option value="+966">🇸🇦 +966</option>
-                <option value="+965">🇰🇼 +965</option>
-                <option value="+974">🇶🇦 +974</option>
-                <option value="+20">🇪🇬 +20</option>
-                <option value="+212">🇲🇦 +212</option>
-                <option value="+27">🇿🇦 +27</option>
-                <option value="+55">🇧🇷 +55</option>
-                <option value="+52">🇲🇽 +52</option>
-                <option value="+54">🇦🇷 +54</option>
-                <option value="+61">🇦🇺 +61</option>
-                <option value="+64">🇳🇿 +64</option>
-                <option value="+65">🇸🇬 +65</option>
-              </select>
-              <input type="tel" placeholder="Phone number" required>
-            </div>
-            <button type="submit" data-i18n="nl-wa-btn">Join on WhatsApp</button>
-          </div>
-        </form>
-      </div>
+      <a href="#" class="nl-app-btn" data-i18n="nl-app-btn">Get the App</a>
     </div>
 
-    <p class="nl-note" data-i18n="nl-note">No spam. Unsubscribe anytime.</p>
+    <!-- Zone 2: Weekly newsletter (grey) -->
+    <div class="nl-news-zone">
+      <div class="nl-news-header">
+        <div class="nl-zone-label" data-i18n="nl-weekly-label">Or get one hormone insight every Thursday! Join 20,000+ women</div>
+      </div>
+      <div class="nl-news-cols">
+        <!-- Email -->
+        <div class="nl-news-col">
+          <div class="nl-form-block">
+            <span class="nl-form-label" data-i18n="nl-email-label">Email</span>
+            <form onsubmit="handleSubmit(event)">
+              <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
+              <input class="nl-zone-input" type="email" data-i18n-placeholder="nl-email-ph" placeholder="Your email address" required>
+              <button class="nl-zone-submit" type="submit" data-i18n="nl-email-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <!-- WhatsApp -->
+        <div class="nl-news-col">
+          <div class="nl-form-block">
+            <span class="nl-form-label" data-i18n="nl-wa-label">WhatsApp</span>
+            <form onsubmit="handleWhatsApp(event)">
+              <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
+              <div class="nl-wa-row">
+                <select class="nl-country-select" aria-label="Country code">
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+39">🇮🇹 +39</option>
+                  <option value="+41">🇨🇭 +41</option>
+                  <option value="+43">🇦🇹 +43</option>
+                  <option value="+31">🇳🇱 +31</option>
+                  <option value="+32">🇧🇪 +32</option>
+                  <option value="+46">🇸🇪 +46</option>
+                  <option value="+47">🇳🇴 +47</option>
+                  <option value="+45">🇩🇰 +45</option>
+                  <option value="+358">🇫🇮 +358</option>
+                  <option value="+48">🇵🇱 +48</option>
+                  <option value="+351">🇵🇹 +351</option>
+                  <option value="+91">🇮🇳 +91</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+966">🇸🇦 +966</option>
+                  <option value="+965">🇰🇼 +965</option>
+                  <option value="+974">🇶🇦 +974</option>
+                  <option value="+20">🇪🇬 +20</option>
+                  <option value="+212">🇲🇦 +212</option>
+                  <option value="+27">🇿🇦 +27</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+52">🇲🇽 +52</option>
+                  <option value="+54">🇦🇷 +54</option>
+                  <option value="+61">🇦🇺 +61</option>
+                  <option value="+64">🇳🇿 +64</option>
+                  <option value="+65">🇸🇬 +65</option>
+                </select>
+                <input class="nl-zone-input" type="tel" data-i18n-placeholder="nl-phone-ph" placeholder="Phone number" required>
+              </div>
+              <button class="nl-zone-submit" type="submit" data-i18n="nl-wa-btn">Join on WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <p class="nl-note" data-i18n-html="nl-note">No spam. No supplements to sell.<br>Unsubscribe anytime.</p>
+    </div>
+
   </section>
 
   <div id="contact" style="scroll-margin-top:80px"></div>
