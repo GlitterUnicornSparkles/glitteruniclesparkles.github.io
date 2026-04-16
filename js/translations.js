@@ -16,7 +16,7 @@ const translations = {
     'res-3-type':'Assessment','res-3-title':'Is Your Metabolism Broken? 12-Point Check','res-3-desc':'Score yourself across thyroid, cortisol and progesterone markers.',
     'res-link':'Download →',
     'nl-label':'Weekly insights','nl-title':'One hormone insight.<br>Every Thursday.',
-    'nl-sub':'Join 47,000 women. No fluff. No supplements to sell.',
+    'nl-sub':'Join 20,000 women. No fluff. No supplements to sell.',
     'nl-tab-email':'Email','nl-tab-wa':'WhatsApp',
     'nl-wa-note':'Receive your weekly Velira insight directly on WhatsApp',
     'nl-email-ph':'Your email address','nl-email-btn':'Subscribe',
