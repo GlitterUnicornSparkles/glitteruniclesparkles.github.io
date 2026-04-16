@@ -8,8 +8,11 @@ const SITE_CONFIG = {
   APP_SECTION: false,
 };
 
-// ─── Apply feature flags on load ────────────────────────────────────────────
-(function applyFlags() {
+// ─── Apply feature flags ─────────────────────────────────────────────────────
+// Named function (NOT an IIFE) — must be called AFTER every setLanguage()
+// call because setLanguage() resets all [data-i18n] textContent, which would
+// overwrite the custom label text set below.
+function applyFlags() {
   if (!SITE_CONFIG.MULTILANG) {
     var langSel = document.querySelector('.lang-selector');
     if (langSel) langSel.style.display = 'none';
@@ -28,11 +31,11 @@ const SITE_CONFIG = {
     var newsZone = document.querySelector('.nl-news-zone');
     if (newsZone) newsZone.classList.add('nl-news-zone--no-app');
 
-    // Update zone label text
+    // Override zone label — must run after setLanguage() or it gets reset
     var weeklyLabel = document.querySelector('[data-i18n="nl-weekly-label"]');
-    if (weeklyLabel) weeklyLabel.textContent = 'Join Velira! One hormone insight every Thursday! Join 20,000+ women';
+    if (weeklyLabel) weeklyLabel.textContent = 'Join Velira! Get one hormone insight every Thursday! Join 20,000+ women';
   }
-})();
+}
 
 // ─── Mobile hamburger nav ───────────────────────────────────────────────────
 const navToggle = document.querySelector('.nav-toggle');
@@ -66,10 +69,11 @@ langMenu.addEventListener('click', function(e) {
   const btn = e.target.closest('.lang-option');
   if (!btn) return;
   setLanguage(btn.dataset.lang);
+  applyFlags(); // re-apply after language switch so overrides persist
   langMenu.classList.remove('open');
 });
 
-// Load saved language on page start
+// Load saved language on page start, then apply feature flags last
 (function() {
   try {
     const saved = localStorage.getItem('velira-lang');
@@ -77,6 +81,7 @@ langMenu.addEventListener('click', function(e) {
       setLanguage(saved);
     }
   } catch(e) {}
+  applyFlags(); // always runs last — overrides any setLanguage() resets
 })();
 
 // ─── Form submit handlers with honeypot check ───────────────────────────────

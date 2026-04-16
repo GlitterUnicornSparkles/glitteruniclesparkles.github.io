@@ -30,9 +30,64 @@ Two toggles live at the **very top of `js/main.js`** in the `SITE_CONFIG` object
 | Flag | `false` (default) | `true` |
 |------|-------------------|--------|
 | `MULTILANG` | English-only — language selector hidden | All 6 languages, selector visible |
-| `APP_SECTION` | App zone hidden; hero CTA → `/quiz`; newsletter zone pink; label reads "Join Velira! One hormone insight every Thursday! Join 20,000+ women" | App zone visible; hero CTA → `#newsletter`; newsletter zone grey; label reads "Or get one hormone insight every Thursday! Join 20,000+ women" |
+| `APP_SECTION` | App zone hidden; hero CTA → `/quiz`; newsletter zone pink; label reads "Join Velira! Get one hormone insight every Thursday! Join 20,000+ women" | App zone visible; hero CTA → `#newsletter`; newsletter zone grey; label reads "Or get one hormone insight every Thursday! Join 20,000+ women" |
 
 **Current defaults:** Both `false` — English only, no app section.
+
+### Implementation rule — `applyFlags` must always run last
+
+`applyFlags()` is a **named function**, not an IIFE. It must be called **after every `setLanguage()` call**, because `setLanguage()` loops over all `[data-i18n]` elements and resets their `textContent` — which overwrites any custom text `applyFlags` has set. The call sites in `main.js` are:
+1. After `setLanguage(saved)` in the "load saved language" IIFE at page start
+2. After `setLanguage(btn.dataset.lang)` in the language selector click handler
+
+**Never** convert `applyFlags` back to an IIFE or move it above `setLanguage`. The order must be: `setLanguage()` → `applyFlags()`.
+
+---
+
+## Testing Checklist
+
+Run these checks before every commit that touches `js/main.js`, `css/styles.css`, or `index.html`.
+
+### Feature flag acceptance tests
+
+Always test **both** localStorage states:
+
+| Step | How |
+|------|-----|
+| **Fresh state** | Open in a private/incognito window (no localStorage) |
+| **Returning user** | In console: `localStorage.setItem('velira-lang','en')`, then reload |
+
+For each state, verify:
+
+**`APP_SECTION: false` (default)**
+- [ ] App zone (pink "Get the App" bar) is **not visible**
+- [ ] Hero CTA button links to `/quiz` (inspect `href`)
+- [ ] Newsletter zone background is **pink** (not grey)
+- [ ] Newsletter headline reads exactly: **"Join Velira! Get one hormone insight every Thursday! Join 20,000+ women"**
+
+**`APP_SECTION: true`**
+- [ ] App zone is **visible**
+- [ ] Hero CTA links to `#newsletter`
+- [ ] Newsletter zone background is **grey**
+- [ ] Newsletter headline reads: **"Or get one hormone insight every Thursday! Join 20,000+ women"**
+
+**`MULTILANG: false` (default)**
+- [ ] Language selector (globe icon) is **not visible**
+
+**`MULTILANG: true`**
+- [ ] Language selector is **visible**
+- [ ] Switching to any language and back: newsletter headline is still correct per `APP_SECTION` flag
+
+### Desktop layout (768px+)
+- [ ] "EMAIL" label and "WHATSAPP" label start at the same top position
+- [ ] "Subscribe" and "Join on WhatsApp" buttons sit at the same bottom position
+- [ ] "No spam. No supplements to sell. Unsubscribe anytime." is on **one line** (no line break)
+
+### Post-mortem: why the label text failed on first attempt
+
+`applyFlags` was written as an IIFE and placed at the top of `main.js`. It ran first and correctly set the label text. But further down the file, the "load saved language" block called `setLanguage('en')` (triggered by any previously saved language in localStorage). `setLanguage()` resets **all** `[data-i18n]` elements to their translation values — overwriting the custom label text `applyFlags` had set. The IIFE had already finished and could not re-run. The flag appeared to "do nothing" because the reset happened silently after it.
+
+**Lesson:** Any DOM override that targets a `[data-i18n]` element must run **after** all `setLanguage()` calls — never before.
 
 ---
 
