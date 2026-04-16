@@ -843,10 +843,11 @@ footer {
 
   .res-link { margin-top: 0; }
 
-  /* Language selector — right-most on desktop */
-  .nav-actions { order: 3; margin-left: auto; }
-  .nav-links { order: 2; margin-left: 0; }
-  .logo { order: 1; }
+  /* Logo left, links + lang right */
+  nav { justify-content: flex-start; gap: 0; }
+  .logo { order: 1; margin-right: auto; }
+  .nav-links { order: 2; }
+  .nav-actions { order: 3; margin-left: 1.5rem; }
 
   /* Newsletter */
   .newsletter { padding: 5rem 4rem; }

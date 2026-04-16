@@ -5,7 +5,7 @@ const translations = {
     'hero-h1':'Your body isn\'t <em>broken.</em> It\'s speaking to you.',
     'hero-sub':'Your toolkit to harmonise your mind, body and heart with your hormonal cycle.',
     'hero-btn':'Get Personalised Insight',
-    'stat-1':'women reading','stat-2':'articles','stat-3':'reader rating',
+    'stat-1':'women engaging','stat-2':'weekly articles','stat-3':'insights rating',
     'pillars-label':'What we cover','pillars-title':'The three pillars of hormone intelligence',
     'pillar-mind-h3':'Mind','pillar-mind-p':'Focus, clarity and calmness — optimised around your cycle.',
     'pillar-body-h3':'Body','pillar-body-p':'Nutrition, movement and metabolism — built for your cycle, not a male body.',
