@@ -652,9 +652,19 @@ a.nl-app-btn { text-decoration: underline; text-decoration-color: var(--mint); }
 /* WhatsApp row */
 .nl-wa-row { display: flex; margin-bottom: 0.5rem; }
 
-.nl-country-select {
+/* ─── Country code combobox ─── */
+.nl-country-combobox {
+  position: relative;
   width: 95px;
   flex-shrink: 0;
+}
+
+.nl-country-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
   padding: 11px 8px;
   background: rgba(15,35,24,0.06);
   border: 0.5px solid rgba(15,35,24,0.2);
@@ -663,10 +673,77 @@ a.nl-app-btn { text-decoration: underline; text-decoration-color: var(--mint); }
   font-family: var(--font-body);
   font-size: 0.78rem;
   color: var(--forest-deep);
-  outline: none;
   cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.nl-country-trigger:hover {
+  background: rgba(15,35,24,0.1);
+}
+
+.nl-country-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 200;
+  width: 240px;
+  background: var(--cream);
+  border: 0.5px solid rgba(15,35,24,0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.nl-country-combobox.open .nl-country-dropdown {
+  display: block;
+}
+
+.nl-country-search {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-bottom: 0.5px solid rgba(15,35,24,0.12);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--forest-deep);
+  outline: none;
+}
+
+.nl-country-search::placeholder {
+  color: rgba(15,35,24,0.35);
+}
+
+.nl-country-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.nl-country-list li {
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--forest-deep);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nl-country-list li:hover,
+.nl-country-list li.highlighted {
+  background: rgba(15,35,24,0.06);
+}
+
+.nl-country-list li.selected {
+  background: rgba(15,35,24,0.1);
+  font-weight: 500;
 }
 
 .nl-wa-row .nl-zone-input {
