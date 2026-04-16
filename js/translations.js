@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    'nav-topics':'Topics','nav-resources':'Resources','nav-notes':'Notes','nav-contact':'Contact','nav-join':'Join',
+    'nav-about':'About Us','nav-topics':'Topics','nav-resources':'Resources','nav-notes':'Notes','nav-contact':'Contact','nav-join':'Join',
     'hero-eyebrow':'Hormone Intelligence for the modern woman',
     'hero-h1':'Your body isn\'t <em>broken.</em> It\'s speaking to you.',
     'hero-sub':'Your toolkit to harmonise your mind, body and heart with your hormonal cycle.',
@@ -36,7 +36,7 @@ const translations = {
   },
 
   es: {
-    'nav-topics':'Temas','nav-resources':'Recursos','nav-notes':'Notas','nav-contact':'Contacto','nav-join':'Únete',
+    'nav-about':'Sobre nosotras','nav-topics':'Temas','nav-resources':'Recursos','nav-notes':'Notas','nav-contact':'Contacto','nav-join':'Únete',
     'hero-eyebrow':'Inteligencia hormonal para la mujer moderna',
     'hero-h1':'Tu cuerpo no está <em>roto.</em> Te está hablando.',
     'hero-sub':'Tu guía para armonizar tu mente, cuerpo y corazón con tu ciclo hormonal.',
@@ -72,7 +72,7 @@ const translations = {
   },
 
   de: {
-    'nav-topics':'Themen','nav-resources':'Ressourcen','nav-notes':'Hinweise','nav-contact':'Kontakt','nav-join':'Mitmachen',
+    'nav-about':'Über uns','nav-topics':'Themen','nav-resources':'Ressourcen','nav-notes':'Hinweise','nav-contact':'Kontakt','nav-join':'Mitmachen',
     'hero-eyebrow':'Hormonintelligenz für die moderne Frau',
     'hero-h1':'Dein Körper ist nicht <em>kaputt.</em> Er spricht mit dir.',
     'hero-sub':'Dein Leitfaden, um Geist, Körper und Herz mit deinem Hormonzyklus in Einklang zu bringen.',
@@ -108,7 +108,7 @@ const translations = {
   },
 
   hi: {
-    'nav-topics':'विषय','nav-resources':'संसाधन','nav-notes':'नोट्स','nav-contact':'संपर्क','nav-join':'जुड़ें',
+    'nav-about':'हमारे बारे में','nav-topics':'विषय','nav-resources':'संसाधन','nav-notes':'नोट्स','nav-contact':'संपर्क','nav-join':'जुड़ें',
     'hero-eyebrow':'आधुनिक महिला के लिए हार्मोन इंटेलिजेंस',
     'hero-h1':'आपका शरीर <em>टूटा</em> नहीं है। यह आपसे बात कर रहा है।',
     'hero-sub':'अपने मन, शरीर और हृदय को अपने हार्मोनल चक्र के साथ संतुलित करने का आपका साधन।',
@@ -144,7 +144,7 @@ const translations = {
   },
 
   ar: {
-    'nav-topics':'المواضيع','nav-resources':'الموارد','nav-notes':'ملاحظات','nav-contact':'تواصل','nav-join':'انضمي',
+    'nav-about':'من نحن','nav-topics':'المواضيع','nav-resources':'الموارد','nav-notes':'ملاحظات','nav-contact':'تواصل','nav-join':'انضمي',
     'hero-eyebrow':'الذكاء الهرموني للمرأة العصرية',
     'hero-h1':'جسدكِ ليس <em>مكسوراً.</em> إنه يتحدث إليكِ.',
     'hero-sub':'دليلكِ لمواءمة عقلكِ وجسدكِ وقلبكِ مع دورتكِ الهرمونية.',
@@ -180,7 +180,7 @@ const translations = {
   },
 
   fr: {
-    'nav-topics':'Sujets','nav-resources':'Ressources','nav-notes':'Notes','nav-contact':'Contact','nav-join':'Rejoindre',
+    'nav-about':'À propos','nav-topics':'Sujets','nav-resources':'Ressources','nav-notes':'Notes','nav-contact':'Contact','nav-join':'Rejoindre',
     'hero-eyebrow':'L\'intelligence hormonale pour la femme moderne',
     'hero-h1':'Ton corps n\'est pas <em>brisé.</em> Il te parle.',
     'hero-sub':'Ta boîte à outils pour harmoniser ton esprit, ton corps et ton cœur avec ton cycle hormonal.',

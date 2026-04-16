@@ -107,6 +107,11 @@ nav {
   opacity: 0.6;
 }
 
+.lang-globe {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 .lang-menu {
   display: none;
   position: absolute;
@@ -545,45 +550,60 @@ h1 em {
 
 .nl-form button:hover { background: var(--forest); }
 
-.nl-toggle {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin: 0 auto 1.5rem;
-  border: 0.5px solid rgba(15, 35, 24, 0.25);
+/* Two-channel signup cards */
+.nl-channels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+
+.nl-channel {
+  background: rgba(15,35,24,0.08);
+  border: 0.5px solid rgba(15,35,24,0.22);
   border-radius: 2px;
-  width: fit-content;
-  overflow: hidden;
+  padding: 1.6rem;
 }
 
-.nl-tab {
-  background: transparent;
-  border: none;
-  padding: 10px 24px;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.nl-channel-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
   color: var(--forest-deep);
-  opacity: 0.5;
-  cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
-}
-
-.nl-tab--active {
-  background: rgba(15, 35, 24, 0.1);
-  opacity: 1;
-}
-
-.nl-wa-info { width: 100%; }
-
-.nl-wa-note {
-  font-size: 0.82rem;
-  color: var(--forest-deep);
-  opacity: 0.65;
   margin-bottom: 1rem;
-  font-weight: 300;
+  line-height: 1;
+}
+
+/* WhatsApp country code row */
+.nl-wa-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.nl-country-select {
+  width: 110px;
+  flex-shrink: 0;
+  padding: 13px 8px;
+  background: rgba(15,35,24,0.06);
+  border: 0.5px solid rgba(15,35,24,0.25);
+  border-right: none;
+  border-bottom: none;
+  color: var(--forest-deep);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  outline: none;
+  border-radius: 2px 0 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.nl-wa-row input {
+  flex: 1;
+  border-radius: 0 2px 0 0 !important;
 }
 
 .nl-note {
@@ -823,8 +843,23 @@ footer {
 
   .res-link { margin-top: 0; }
 
+  /* Language selector — right-most on desktop */
+  .nav-actions { order: 3; margin-left: auto; }
+  .nav-links { order: 2; margin-left: 0; }
+  .logo { order: 1; }
+
   /* Newsletter */
   .newsletter { padding: 5rem 4rem; }
+  .nl-channels { grid-template-columns: 1fr 1fr; }
+  /* Keep channel forms vertical (not inline) even on tablet */
+  .nl-channel .nl-form { flex-direction: column; }
+  .nl-channel .nl-form input {
+    border-bottom: none;
+    border-right: 0.5px solid rgba(15,35,24,0.25) !important;
+    border-radius: 2px 2px 0 0 !important;
+  }
+  .nl-channel .nl-form button { border-radius: 0 0 2px 2px; }
+  .nl-country-select { border-radius: 2px 0 0 0; }
 
   .nl-form { flex-direction: row; }
 

@@ -43,23 +43,13 @@ langMenu.addEventListener('click', function(e) {
   } catch(e) {}
 })();
 
-// ─── Newsletter toggle: Email / WhatsApp ────────────────────────────────────
-document.querySelectorAll('.nl-tab').forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    document.querySelectorAll('.nl-tab').forEach(function(t) {
-      t.classList.remove('nl-tab--active');
-    });
-    this.classList.add('nl-tab--active');
-    const target = this.dataset.form;
-    document.getElementById('form-email').style.display = target === 'email' ? '' : 'none';
-    document.getElementById('form-whatsapp').style.display = target === 'whatsapp' ? '' : 'none';
-  });
-});
-
+// ─── Form submit handlers with honeypot check ───────────────────────────────
 function handleSubmit(e) {
   e.preventDefault();
+  const honeypot = e.target.querySelector('input[name="website"]');
+  if (honeypot && honeypot.value) return; // bot detected — silent reject
   const btn = e.target.querySelector('button');
-  const input = e.target.querySelector('input');
+  const input = e.target.querySelector('input[type="email"]');
   btn.textContent = 'Subscribed ✓';
   btn.style.background = '#2a5240';
   input.value = '';
@@ -71,11 +61,15 @@ function handleSubmit(e) {
 
 function handleWhatsApp(e) {
   e.preventDefault();
+  const honeypot = e.target.querySelector('input[name="website"]');
+  if (honeypot && honeypot.value) return; // bot detected — silent reject
   const btn = e.target.querySelector('button');
-  const input = e.target.querySelector('input');
+  const select = e.target.querySelector('.nl-country-select');
+  const input = e.target.querySelector('input[type="tel"]');
+  const code = select ? select.value : '';
   btn.textContent = 'Joined ✓';
   btn.style.background = '#2a5240';
-  input.value = '';
+  if (input) input.value = '';
   setTimeout(() => {
     btn.textContent = 'Join on WhatsApp';
     btn.style.background = '';

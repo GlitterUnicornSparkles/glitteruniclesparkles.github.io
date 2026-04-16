@@ -15,7 +15,7 @@
     <div class="nav-actions">
       <div class="lang-selector">
         <button class="lang-btn" id="lang-btn" aria-label="Select language">
-          <span id="lang-current">EN</span><span class="lang-arrow"> ▾</span>
+          <span id="lang-current" style="display:none">EN</span><span class="lang-globe">🌐</span><span class="lang-arrow"> ▾</span>
         </button>
         <div class="lang-menu" id="lang-menu">
           <button class="lang-option active" data-lang="en">English</button>
@@ -29,9 +29,8 @@
       <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     </div>
     <ul class="nav-links">
+      <li><a href="about.html" data-i18n="nav-about">About Us</a></li>
       <li><a href="#pillars" data-i18n="nav-topics">Topics</a></li>
-      <li><a href="#resources" data-i18n="nav-resources">Resources</a></li>
-      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
       <li><a href="#newsletter" class="nav-cta" data-i18n="nav-join">Join</a></li>
     </ul>
   </nav>
@@ -112,22 +111,61 @@
     <div class="nl-title" data-i18n-html="nl-title">One hormone insight.<br>Every Thursday.</div>
     <div class="nl-sub" data-i18n="nl-sub">Join 47,000 women. No fluff. No supplements to sell.</div>
 
-    <div class="nl-toggle">
-      <button class="nl-tab nl-tab--active" data-form="email" data-i18n="nl-tab-email">Email</button>
-      <button class="nl-tab" data-form="whatsapp" data-i18n="nl-tab-wa">WhatsApp</button>
-    </div>
-
-    <form class="nl-form nl-form--email" id="form-email" onsubmit="handleSubmit(event)">
-      <input type="email" data-i18n-placeholder="nl-email-ph" placeholder="Your email address" required>
-      <button type="submit" data-i18n="nl-email-btn">Subscribe</button>
-    </form>
-
-    <div class="nl-wa-info" id="form-whatsapp" style="display:none">
-      <p class="nl-wa-note" data-i18n="nl-wa-note">Receive your weekly Velira insight directly on WhatsApp</p>
-      <form class="nl-form nl-form--wa" onsubmit="handleWhatsApp(event)">
-        <input type="tel" data-i18n-placeholder="nl-wa-ph" placeholder="Your number incl. country code" required>
-        <button type="submit" data-i18n="nl-wa-btn">Join on WhatsApp</button>
-      </form>
+    <div class="nl-channels">
+      <div class="nl-channel">
+        <div class="nl-channel-title">Email</div>
+        <form onsubmit="handleSubmit(event)">
+          <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
+          <div class="nl-form">
+            <input type="email" data-i18n-placeholder="nl-email-ph" placeholder="Your email address" required>
+            <button type="submit" data-i18n="nl-email-btn">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <div class="nl-channel">
+        <div class="nl-channel-title">WhatsApp</div>
+        <form onsubmit="handleWhatsApp(event)">
+          <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0">
+          <div class="nl-form nl-form--wa">
+            <div class="nl-wa-row">
+              <select class="nl-country-select" aria-label="Country code">
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+39">🇮🇹 +39</option>
+                <option value="+41">🇨🇭 +41</option>
+                <option value="+43">🇦🇹 +43</option>
+                <option value="+31">🇳🇱 +31</option>
+                <option value="+32">🇧🇪 +32</option>
+                <option value="+46">🇸🇪 +46</option>
+                <option value="+47">🇳🇴 +47</option>
+                <option value="+45">🇩🇰 +45</option>
+                <option value="+358">🇫🇮 +358</option>
+                <option value="+48">🇵🇱 +48</option>
+                <option value="+351">🇵🇹 +351</option>
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+965">🇰🇼 +965</option>
+                <option value="+974">🇶🇦 +974</option>
+                <option value="+20">🇪🇬 +20</option>
+                <option value="+212">🇲🇦 +212</option>
+                <option value="+27">🇿🇦 +27</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+52">🇲🇽 +52</option>
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+64">🇳🇿 +64</option>
+                <option value="+65">🇸🇬 +65</option>
+              </select>
+              <input type="tel" placeholder="Phone number" required>
+            </div>
+            <button type="submit" data-i18n="nl-wa-btn">Join on WhatsApp</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <p class="nl-note" data-i18n="nl-note">No spam. Unsubscribe anytime.</p>
