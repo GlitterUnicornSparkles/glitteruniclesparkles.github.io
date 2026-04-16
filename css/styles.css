@@ -575,6 +575,12 @@ a.nl-app-btn { text-decoration: underline; text-decoration-color: var(--mint); }
   border-bottom: 0.5px solid rgba(15,35,24,0.1);
 }
 
+/* No-app mode: newsletter zone turns pink (toggled via JS) */
+.nl-news-zone--no-app {
+  background: var(--pink);
+  border-top: 0.5px solid rgba(15,35,24,0.12);
+}
+
 .nl-news-header {
   padding: 1rem 1.25rem 0.5rem;
   border-bottom: 0.5px solid rgba(15,35,24,0.08);
@@ -1026,6 +1032,28 @@ footer {
     border-top: none;
     border-left: 0.5px solid rgba(15,35,24,0.1);
   }
+
+  /* Vertical alignment: push submit buttons to same baseline in both cols */
+  .nl-news-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .nl-news-col .nl-form-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .nl-news-col form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .nl-news-col .nl-zone-submit {
+    margin-top: auto;
+  }
+
+  /* Hide <br> in nl-note on desktop — single line */
+  .nl-note br { display: none; }
 
   .nl-note { padding: 1.25rem 3rem 2rem; }
 

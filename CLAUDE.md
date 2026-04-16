@@ -23,6 +23,19 @@ Workflow: edit files → `git add` + `git commit` → user pushes via GitHub Des
 
 ---
 
+## Feature Flags
+
+Two toggles live at the **very top of `js/main.js`** in the `SITE_CONFIG` object. Edit only those two `true`/`false` values — no other files need touching.
+
+| Flag | `false` (default) | `true` |
+|------|-------------------|--------|
+| `MULTILANG` | English-only — language selector hidden | All 6 languages, selector visible |
+| `APP_SECTION` | App zone hidden; hero CTA → `/quiz`; newsletter zone pink; label reads "Join Velira! One hormone insight every Thursday! Join 20,000+ women" | App zone visible; hero CTA → `#newsletter`; newsletter zone grey; label reads "Or get one hormone insight every Thursday! Join 20,000+ women" |
+
+**Current defaults:** Both `false` — English only, no app section.
+
+---
+
 ## Brand Rules (non-negotiable)
 
 - Name: **Velira**

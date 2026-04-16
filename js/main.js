@@ -1,3 +1,39 @@
+// ─── FEATURE FLAGS ──────────────────────────────────────────────────────────
+// MULTILANG:   false = English-only (language selector hidden)
+//              true  = all 6 languages + selector visible
+// APP_SECTION: false = App zone hidden; hero CTA → /quiz; newsletter zone pink
+//              true  = App zone visible, layout unchanged
+const SITE_CONFIG = {
+  MULTILANG:   false,
+  APP_SECTION: false,
+};
+
+// ─── Apply feature flags on load ────────────────────────────────────────────
+(function applyFlags() {
+  if (!SITE_CONFIG.MULTILANG) {
+    var langSel = document.querySelector('.lang-selector');
+    if (langSel) langSel.style.display = 'none';
+  }
+
+  if (!SITE_CONFIG.APP_SECTION) {
+    // Hide app zone
+    var appZone = document.querySelector('.nl-app-zone');
+    if (appZone) appZone.style.display = 'none';
+
+    // Hero CTA → quiz
+    var heroCta = document.querySelector('a.btn-primary');
+    if (heroCta) heroCta.href = '/quiz';
+
+    // Newsletter zone: pink background + top border
+    var newsZone = document.querySelector('.nl-news-zone');
+    if (newsZone) newsZone.classList.add('nl-news-zone--no-app');
+
+    // Update zone label text
+    var weeklyLabel = document.querySelector('[data-i18n="nl-weekly-label"]');
+    if (weeklyLabel) weeklyLabel.textContent = 'Join Velira! One hormone insight every Thursday! Join 20,000+ women';
+  }
+})();
+
 // ─── Mobile hamburger nav ───────────────────────────────────────────────────
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
